@@ -10,7 +10,7 @@
     "build": "coffee --map --compile --output ./lib/ ./src/main.coffee",
     "prepare": "npm run build",
     "dev": "npm run prepare && npm run dev:run -- ",
-    "dev:run": "node ./lib/main.js -- "
+    "dev:run": "node ./lib/main.js "
   },
   "files": [
     "lib/"
