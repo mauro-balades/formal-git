@@ -9,7 +9,8 @@
   "scripts": {
     "build": "coffee --map --compile --output ./lib/ ./src/main.coffee",
     "prepare": "npm run build",
-    "run": "npm run prepare && node ./lib/main.js"
+    "dev": "npm run prepare && npm run dev:run -- ",
+    "dev:run": "node ./lib/main.js -- "
   },
   "files": [
     "lib/"
