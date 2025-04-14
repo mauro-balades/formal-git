@@ -52,7 +52,7 @@ getCommitTemplate = ->
     template = fs.readFileSync templateFile, 'utf8'
     return template
   else
-    return "{type}({components}) - {bugId} - {message}"
+    return "{type}({components}): {bugId} - {message}"
 
 getChangedFiles = (callback) ->
   # Get the list of changed files
