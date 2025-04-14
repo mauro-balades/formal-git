@@ -1,6 +1,7 @@
 
 {spawn, exec}  = require 'child_process'
 process = require 'process'
+{version} = require './package.json'
 
 SWITCHES = [
   '--help'
@@ -13,12 +14,15 @@ SWITCHES = [
 ]
 
 main = (args) ->
-  # Check for switches
+  commitMessage = ""
+  bugId = ""
+  verbose = false
+  noClose = false
   for arg in args
     if arg in SWITCHES
       switch arg
         when '--help'
-          console.log 'Usage: coffee -c [options] [file]'
+          console.log 'Usage: fo -c [options] [file]'
           console.log 'Options:'
           console.log '  --help, -h       Show this help message'
           console.log '  --version        Show version information'
@@ -26,11 +30,11 @@ main = (args) ->
           console.log '  --no-close, -N   Do not close the process after execution'
           return
         when '--version'
-          console.log 'CoffeeScript version 1.12.7'
+          console.log "Version: #{version}"
           return
         when '--verbose', '-v'
-          console.log 'Verbose mode enabled'
+          verbose = true
         when '--no-close', '-N'
-          console.log 'No close mode enabled'
+          noClose = true
 
 main process.argv
