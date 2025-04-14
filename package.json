@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "coffeescript": "^2.7.0"
+  },
+  "name": "formal-git",
+  "version": "1.0.0",
+  "description": "Write standarized git commit messages for better organization",
+  "main": "index.js",
+  "scripts": {
+    "build": "coffee --map --compile --output ./lib/ ./src/main.coffee",
+    "prepare": "npm run build",
+    "run": "npm run prepare && node ./lib/main.js"
+  },
+  "files": [
+    "lib/"
+  ],
+  "bin": "fo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauro-balades/formal-git.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mauro-balades/formal-git/issues"
+  },
+  "homepage": "https://github.com/mauro-balades/formal-git#readme"
+}
