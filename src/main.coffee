@@ -69,7 +69,6 @@ stageFilesToCommit = (callback) ->
     if error
       console.error "Error staging files: #{error.message}"
       return
-    console.log "Files staged for commit"
     callback()
 
 getDefinedComponents = ->
