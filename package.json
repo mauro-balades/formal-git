@@ -3,7 +3,7 @@
     "coffeescript": "^2.7.0"
   },
   "name": "formal-git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write standarized git commit messages for better organization",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,9 @@
   "files": [
     "lib/"
   ],
-  "bin": "fo",
+  "bin": {
+    "formal-git": "fo"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mauro-balades/formal-git.git"
