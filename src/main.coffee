@@ -46,8 +46,7 @@ getCorrectCommitType = (commitType) ->
     throw new Error "Invalid commit type: #{commitType}. Valid types are: #{validCommitTypes.join(', ')}"
 
 getCommitTemplate = ->
-  # Get the commit template from a .formal-git file
-  templateFile = '.formal-git'
+  templateFile = '.formal-git/template'
   if fs.existsSync templateFile
     template = fs.readFileSync templateFile, 'utf8'
     return template
@@ -73,7 +72,7 @@ stageFilesToCommit = (callback) ->
 
 getDefinedComponents = ->
   # Get the list of components from a .formal-git file
-  componentsFile = '.formal-git-components'
+  componentsFile = '.formal-git/components'
   if fs.existsSync componentsFile
     components = fs.readFileSync componentsFile, 'utf8'
     return components.split('\n').filter (component) -> component.length > 0
