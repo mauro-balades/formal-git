@@ -196,8 +196,8 @@ main = (args) ->
         if error
           console.error "Error committing: #{error.message}"
           return
-        if verbose
-          console.log "Commit output: #{stdout}"
+        console.log stdout
+        console.log stderr
         if not noClose
           process.exit(0)
         else
