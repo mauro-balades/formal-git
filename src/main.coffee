@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 {spawn, exec}  = require 'child_process'
 process = require 'process'
