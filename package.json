@@ -3,7 +3,7 @@
     "coffeescript": "^2.7.0"
   },
   "name": "formal-git",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Write standarized git commit messages for better organization",
   "main": "lib/main.js",
   "scripts": {

@@ -179,7 +179,6 @@ main = (args) ->
       components = usedComponents.join(', ')
       if usedComponents.length == 0
         components = 'no-component'
-
       if changedFiles.length == 0
         console.log "No files to commit"
         return
@@ -192,21 +191,7 @@ main = (args) ->
         .replace('{message}', commitMessage)
       if verbose
         console.log "Commit message: #{message}"
-      exec "git commit -m '#{message}'", (error, stdout, stderr) ->
-        if error
-          console.error "Error committing: #{error.message}"
-          return
-        console.log stdout
-        console.log stderr
-        if not noClose
-          process.exit(0)
-        else
-          console.log "Commit successful, but not closing the process"
-          return
-      if not noClose
-        process.exit(0)
-      else
-        console.log "Process not closed as per --no-close option"
+      spawn 'git', ['commit', '-m', message]
 
   if not dontAdd
     stageFilesToCommit stageFilesCallback
