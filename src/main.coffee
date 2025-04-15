@@ -86,7 +86,7 @@ getProperBugId = (bugId) ->
   checkBugId = (bugId) ->
     # Check if the bug ID is a number
     if /^[0-9]+$/.test(bugId)
-      return true
+      return bugId
     else
       throw new Error "Invalid bug ID: #{bugId}"
 
@@ -174,12 +174,11 @@ main = (args) ->
       usedComponents = []
       for file in changedFiles
         for component in definedComponents
-          if file.includes component
+          if file.includes component and not usedComponents.includes component
             usedComponents.push component
       components = usedComponents.join(', ')
       if usedComponents.length == 0
         components = 'no-component'
-
 
       if changedFiles.length == 0
         console.log "No files to commit"
