@@ -174,7 +174,7 @@ main = (args) ->
       usedComponents = []
       for file in changedFiles
         for component in definedComponents
-          if file.includes component and not usedComponents.includes component
+          if (file.includes component) and not usedComponents.includes component 
             usedComponents.push component
       components = usedComponents.join(', ')
       if usedComponents.length == 0
