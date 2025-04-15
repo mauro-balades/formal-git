@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 
 {spawn, exec}  = require 'child_process'
 process = require 'process'
@@ -21,7 +20,7 @@ SWITCHES = [
 
 removeBinFromArgs = (args) ->
   # Remove the first two arguments if they are the path to the binary
-  if args[0] == process.execPath and args[1] == __filename
+  if args[0] == process.execPath
     return args.slice(2)
   else
     return args
